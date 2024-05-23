@@ -4,5 +4,6 @@ compatibility_flags = [ "nodejs_compat" ]
 pages_build_output_dir = "./.vercel/output/static"
 
 [vars]
-NEXT_PUBLIC_SALEOR_API_URL = "https://api.skozix.com/graphql/"
+#NEXT_PUBLIC_SALEOR_API_URL = "https://api.skozix.com/graphql/"
+NEXT_PUBLIC_SALEOR_API_URL = "https://store-f3fnvxki.saleor.cloud/graphql/"
 NEXT_PUBLIC_STOREFRONT_URL = "https://store.skozix.com"
