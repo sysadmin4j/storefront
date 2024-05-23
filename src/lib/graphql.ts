@@ -20,7 +20,8 @@ export async function executeGraphQL<Result, Variables>(
 	} & (Variables extends Record<string, never> ? { variables?: never } : { variables: Variables }),
 ): Promise<Result> {
 	invariant(process.env.NEXT_PUBLIC_SALEOR_API_URL, "Missing NEXT_PUBLIC_SALEOR_API_URL env variable");
-	const { variables, headers, cache, revalidate, withAuth = true } = options;
+	//const { variables, headers, cache, revalidate, withAuth = true } = options;
+	const { variables, headers, revalidate, withAuth = true } = options;
 
 	const input = {
 		method: "POST",
@@ -32,7 +33,7 @@ export async function executeGraphQL<Result, Variables>(
 			query: operation.toString(),
 			...(variables && { variables }),
 		}),
-		cache: cache,
+		//cache: cache,
 		next: { revalidate },
 	};
 
